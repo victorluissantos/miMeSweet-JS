@@ -20,25 +20,60 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" language="JavaScript">
+var segundo = 0+"0";
+var minuto = 0+"0";
+var hora = 0+"0";
+ 
+function tempo(){ 
+   if (segundo < 59){
+      segundo++
+      if(segundo < 10){segundo = "0"+segundo}
+   }else 
+      if(segundo == 59 && minuto < 59){
+         segundo = 0+"0";
+  minuto++;
+  if(minuto < 10){minuto = "0"+minuto}
+      }
+   if(minuto == 59 && segundo == 59 && hora < 23){
+      segundo = 0+"0";
+      minuto = 0+"0";
+      hora++;
+      if(hora < 10){hora = "0"+hora}
+   }else 
+      if(minuto == 59 && segundo == 59 && hora == 23){
+         segundo = 0+"0";
+  minuto = 0+"0";
+  hora = 0+"0";
+      }
+      var html ="";
+      $('#cronometro').html(html);
+      $('#cronometro').html("<b>Tempo:</b> "+hora +":"+ minuto +":"+ segundo);
+}
+</script>
+
 </head>
 <body>
-    <div class="container">
-        <div class="row vertical-offset-100">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">                                
-                        <div class="row-fluid user-row">
-							<span id="level">Level: <!--Level--></span>
-							<span id="time">Time: <!--Timer--></span>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-						<table id="label">
-						</table>
+<div class="container">
+<form name="form" id="formGame">
+    <div class="row vertical-offset-100">
+        <div class="col-md-5 col-md-offset-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <div class="row-fluid user-row">
+                        <span id="level">Level: <!--Level--></span>
+                        <span style="float: right;" name="cronometro" id="cronometro"><b>Timer:</b> 00:00:00</span>
                     </div>
                 </div>
+                <div class="panel-body">
+  				    <table id="label">
+      				</table>
+              </div>
             </div>
         </div>
     </div>
+<button type="button" onclick="setInterval('tempo()',983);return false;">Iniciar Cronômetro</button>
+</form>
+</div>
 </body>
 </html>
