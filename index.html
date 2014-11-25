@@ -57,22 +57,28 @@ function tempo(){
 <body>
 <div class="container">
 <form name="form" id="formGame">
-    <div class="row vertical-offset-100">
-        <div class="col-md-6 col-md-offset-5">
-            <div class="panel panel-default">
-                <div class="panel-heading">                                
-                    <div class="row-fluid user-row">
-                        <span id="level">Level: <!--Level--></span>
-                        <span style="float: right;" name="cronometro" id="cronometro"><b>Timer:</b> 00:00:00</span>
-                    </div>
-                </div>
-                <div class="panel-body">
-  				      <table id="label">
-      				  </table>
+<section id="game">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+          <div class="form-wrap">
+          <div class="panel panel-default">
+              <div class="panel-heading">                                
+                  <div class="row-fluid user-row">
+                      <span id="level">Level: <!--Level--></span>
+                      <span style="float: right;" name="cronometro" id="cronometro"><b>Timer:</b> 00:00:00</span>
+                  </div>
               </div>
+              <div class="panel-body">
+				      <table id="label">
+    				  </table>
             </div>
-        </div>
-    </div>
+          </div>
+          </div>
+      </div> <!-- /.col-xs-12 -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>
 <button type="button" class="btn btn-danger" onclick="setInterval('tempo()',983);return false;">Iniciar !</button>
 </form>
 </div>
